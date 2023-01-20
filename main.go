@@ -67,14 +67,14 @@ func main() {
 				// POSITIVE
 				if event.Keycode == hook.Keycode["f8"] {
 					fmt.Println("[Screenshot] POSITIVE:", IMG_DIR+"pos/"+fileName)
-					snap("pos/"+fileName)
+					go snap("pos/"+fileName)
 					counter += 1
 				}
 				
 				// NEGATIVE
 				if event.Keycode == hook.Keycode["f9"] {
 					fmt.Println("[Screenshot] NEGATIVE:", IMG_DIR+"neg/"+fileName)
-					snap("neg/"+fileName)
+					go snap("neg/"+fileName)
 					negFile.WriteString(IMG_DIR+"neg/"+fileName+"\n")
 					counter += 1
 				}

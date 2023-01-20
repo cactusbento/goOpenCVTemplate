@@ -1,2 +1,6 @@
 #!/bin/sh
-/opt/opencv3/bin/opencv_traincascade -data cascade/ -vec vec/pos.vec -bg annotations/neg.txt -w 32 -h 32 -numPos 24 -numNeg 96 -numStages 9 -maxFalseAlarmRate 0.25 -minHitRate 0.999
+/opt/opencv3/bin/opencv_traincascade -data cascade/ -vec vec/pos.vec -bg annotations/neg.txt -w 24 -h 24 \
+	-numPos 16 -numNeg 160 -numStages 9 \
+	-maxFalseAlarmRate 0.15 \
+	-minHitRate 0.99 \
+	-acceptanceRatioBreakValue 0.00001
