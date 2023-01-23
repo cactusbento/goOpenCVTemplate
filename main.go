@@ -12,10 +12,10 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-	"time"
+	// "time"
 
 	"github.com/bendahl/uinput"
-	"github.com/go-vgo/robotgo"
+	// "github.com/go-vgo/robotgo"
 	"github.com/kbinani/screenshot"
 	hook "github.com/robotn/gohook"
 
@@ -140,32 +140,6 @@ func snap(fileName string) {
 	nImg, _ := os.Create(IMG_DIR + fileName)
 	defer nImg.Close()
 	jpeg.Encode(nImg, scrsht, nil)
-
-}
-
-func moveMouse(mouse uinput.Mouse, X, Y int) {
-	CX, CY := robotgo.GetMousePos()
-
-	for CX != X || CY != Y {
-		CX, CY = robotgo.GetMousePos()
-
-		if CX < X {
-			mouse.MoveRight(1)
-		}
-
-		if CX > X {
-			mouse.MoveLeft(1) 
-		}
-
-		if CY < Y {
-			mouse.MoveDown(1) 
-		}
-		
-		if CY > Y {
-			mouse.MoveUp(1)
-		}
-		time.Sleep(time.Millisecond * 2)
-	}
 
 }
 
