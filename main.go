@@ -65,14 +65,14 @@ func main() {
 				fileName := fmt.Sprintf("%04d.jpg", counter )
 
 				// POSITIVE
-				if event.Keycode == hook.Keycode["f8"] {
+				if event.Keycode == hook.Keycode["v"] {
 					fmt.Println("[Screenshot] POSITIVE:", IMG_DIR+"pos/"+fileName)
 					go snap("pos/"+fileName)
 					counter += 1
 				}
 				
 				// NEGATIVE
-				if event.Keycode == hook.Keycode["f9"] {
+				if event.Keycode == hook.Keycode["b"] {
 					fmt.Println("[Screenshot] NEGATIVE:", IMG_DIR+"neg/"+fileName)
 					go snap("neg/"+fileName)
 					negFile.WriteString(IMG_DIR+"neg/"+fileName+"\n")
@@ -138,9 +138,9 @@ func snap(fileName string) {
 	}
 
 	nImg, _ := os.Create(IMG_DIR + fileName)
+	defer nImg.Close()
 	jpeg.Encode(nImg, scrsht, nil)
 
-	nImg.Close()
 }
 
 func moveMouse(mouse uinput.Mouse, X, Y int) {
