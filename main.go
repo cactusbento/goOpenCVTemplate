@@ -19,6 +19,8 @@ import (
 	"github.com/kbinani/screenshot"
 	hook "github.com/robotn/gohook"
 
+	//g "github.com/AllenDang/giu"
+
 	"gocv.io/x/gocv"
 )
 
@@ -52,13 +54,16 @@ func main() {
 	cvWin := gocv.NewWindow("Bot Vision")
 	defer cvWin.Close()
 
+	// Start event listener
 	h := hook.Start()
 	defer hook.End()
 	
+	// Prepare Negative file
 	counter := 0
 	negFile, _ := os.OpenFile("annotations/neg.txt", os.O_RDWR|os.O_CREATE, 0755)
 	defer negFile.Close()
 
+	// Listen for keyboard events
 	go func() {
 		for event := range h {
 			if event.Kind == hook.KeyHold {
