@@ -18,5 +18,7 @@ Instructions:
  * Press `v` to take positive screenshots.
  * Press `b` to take negative screenshots.
  * `./annotate.sh` to launch OpenCV's annotate program and start annotating positives.
- * ''
+ * `./samples.sh` to create samples.
+ * `./train.sh` to train the models.
+Make sure to edit these scripts to match your OpenCV installation and preferences.
 
