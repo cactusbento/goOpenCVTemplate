@@ -5,6 +5,7 @@ A starter repository for training a cascade classifier on game objects using [go
 Mainly created because I wanted to experiment on visual game object detection for game automation.
 
 ---------
+![BotVision](https://user-images.githubusercontent.com/14164311/219828546-ccc63a69-c01c-45fb-9a09-90cba48372c6.png)
 
 
 Follow the [OpenCV Cascade Classifier training article](https://docs.opencv.org/4.x/dc/d88/tutorial_traincascade.html) when using this repository, most things are automated here.
